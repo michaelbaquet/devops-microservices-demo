@@ -1,0 +1,10 @@
+com/evergreen/productservice/repository/ProductRepository.class
+com/evergreen/productservice/service/ProductService.class
+com/evergreen/productservice/ProductServiceApplication.class
+com/evergreen/productservice/dto/ProductRequest.class
+com/evergreen/productservice/model/Product.class
+com/evergreen/productservice/dto/ProductRequest$ProductRequestBuilder.class
+com/evergreen/productservice/dto/ProductResponse$ProductResponseBuilder.class
+com/evergreen/productservice/controller/ProductController.class
+com/evergreen/productservice/model/Product$ProductBuilder.class
+com/evergreen/productservice/dto/ProductResponse.class
