@@ -5,6 +5,7 @@
 *.dll
 *.so
 *.dylib
+target/
 
 # Ignore node_modules directory for Node.js projects
 node_modules/
