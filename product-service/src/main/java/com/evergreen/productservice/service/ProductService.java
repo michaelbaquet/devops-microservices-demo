@@ -1,21 +1,22 @@
 package com.evergreen.productservice.service;
 
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.evergreen.productservice.dto.ProductRequest;
 import com.evergreen.productservice.dto.ProductResponse;
 import com.evergreen.productservice.model.Product;
 import com.evergreen.productservice.repository.ProductRepository;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
-@RequiredArgsConstructor
+// @RequiredArgsConstructor
 @Slf4j
 public class ProductService {
 
-    private final ProductRepository productRepository;
+    private final ProductRepository productRepository = new ProductRepository();
 
     public void createProduct(ProductRequest productRequest) {
         Product product = Product.builder()
@@ -25,10 +26,12 @@ public class ProductService {
                 .build();
 
         productRepository.save(product);
+        
         log.info("Product {} is saved", product.getId() );
     }
 
     public List<ProductResponse> getAllProducts() {
+        log.info("FETCHING ALL ITEMS", "");
         List<Product> allProducts = productRepository.findAll();
         return allProducts.stream()
                 .map(this::mapToProductResponse).toList();

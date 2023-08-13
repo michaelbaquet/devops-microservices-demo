@@ -17,21 +17,18 @@ import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.testcontainers.containers.MongoDBContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 
 import com.evergreen.productservice.dto.ProductRequest;
 import com.evergreen.productservice.repository.ProductRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @SpringBootTest
-@Testcontainers
+// @Testcontainers
 @AutoConfigureMockMvc
 public class ProductServiceApplicationTests {
 
-	@Container
-	static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo:4.4.2");
+	// @Container
+	// static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo:4.4.2");
 
 	@Autowired
 	private ObjectMapper objectMapper;
@@ -39,12 +36,12 @@ public class ProductServiceApplicationTests {
 	@Autowired
 	private MockMvc mockMvc;
 
-	@Autowired
-	ProductRepository productRepository;
+	// @Autowired
+	ProductRepository productRepository = new ProductRepository();
 
 	@DynamicPropertySource
 	static void setProperties(DynamicPropertyRegistry dynamicPropertyRegistry) {
-		dynamicPropertyRegistry.add("spring.data.mongodb.uri", mongoDBContainer::getReplicaSetUrl);
+		// dynamicPropertyRegistry.add("spring.data.mongodb.uri", mongoDBContainer::getReplicaSetUrl);
 	}
 
 	@BeforeEach
@@ -54,7 +51,7 @@ public class ProductServiceApplicationTests {
 	@AfterAll
     static void tearDown() {
         // Stop and remove the MongoDB container
-        mongoDBContainer.stop();
+        // mongoDBContainer.stop();
     }
 
 	@Test

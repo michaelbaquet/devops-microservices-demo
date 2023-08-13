@@ -1,7 +1,24 @@
 package com.evergreen.productservice.repository;
 
-import com.evergreen.productservice.model.Product;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import java.util.ArrayList;
+import java.util.List;
 
-public interface ProductRepository extends MongoRepository<Product, String> {
+import com.evergreen.productservice.model.Product;
+
+// public interface ProductRepository extends MongoRepository<Product, String> {
+// }
+
+public class ProductRepository {
+
+    private static List<Product> products = new ArrayList<>();
+
+    public void save(Product product) {
+        product.setId(String.valueOf(Math.random()));
+        products.add(product);
+    }
+
+    public List<Product> findAll() {
+        return products;
+    }
+
 }
