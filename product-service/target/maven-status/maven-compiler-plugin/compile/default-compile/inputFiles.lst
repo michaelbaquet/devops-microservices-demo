@@ -1,7 +1,0 @@
-/Users/evergreen/IdeaProjects/devops-microservices-demo/product-service/src/main/java/com/evergreen/productservice/dto/ProductRequest.java
-/Users/evergreen/IdeaProjects/devops-microservices-demo/product-service/src/main/java/com/evergreen/productservice/dto/ProductResponse.java
-/Users/evergreen/IdeaProjects/devops-microservices-demo/product-service/src/main/java/com/evergreen/productservice/service/ProductService.java
-/Users/evergreen/IdeaProjects/devops-microservices-demo/product-service/src/main/java/com/evergreen/productservice/repository/ProductRepository.java
-/Users/evergreen/IdeaProjects/devops-microservices-demo/product-service/src/main/java/com/evergreen/productservice/controller/ProductController.java
-/Users/evergreen/IdeaProjects/devops-microservices-demo/product-service/src/main/java/com/evergreen/productservice/ProductServiceApplication.java
-/Users/evergreen/IdeaProjects/devops-microservices-demo/product-service/src/main/java/com/evergreen/productservice/model/Product.java
